@@ -10,16 +10,16 @@ const assignedTo = document.querySelector('#assignedTo');
 form.addEventListener('submit', (e) => {
  e.preventDefault();
 
- validFormFieldInput();
+ validFormFieldInput();/tools-and-resources/
 });
 
 let validFormFieldInput = ()=> {
     //gets values from the form inputs
    const taskNameValue = taskName.value.trim();
    const taskDescriptionValue = taskDescription.value.trim();
-   const dueDateValue = dueDate.value.trim();
-   const taskPrioityValue = taskPriority.value.trim();
-   const assignedToValue = assignedTo.value.trim();
+   const dueDateValue = dueDate.value;
+   const taskPrioityValue = taskPriority.value;
+   const assignedToValue = assignedTo.value;
    
    if(taskNameValue === ''){
        //error message
