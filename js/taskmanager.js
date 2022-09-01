@@ -75,10 +75,6 @@ const task5 = {
   description: 'Wash dishes',
   assignedTo: 'Nadya',
   dueDate: '2020-07-17',
-<<<<<<< HEAD
   status: 'To-do'
 };
-=======
-  status: 'To-do',
-}
->>>>>>> bf5b8b8a4a9c35456cb501bc909889d36c31d1b8
+
