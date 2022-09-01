@@ -1,7 +1,8 @@
-//const taskManager = new TaskManager();
+//clearconst taskManager = new TaskManager();
 //console.log(taskManager);
 
-const form = document.querySelector('#form');
+// selects each of the inputs
+const myForm = document.querySelector('#form');
 const submitBtn = document.querySelector('#submitBtn');
 const taskName = document.querySelector('#taskName');
 const taskDescription = document.querySelector('#taskDescription');
@@ -11,25 +12,29 @@ const assignedTo = document.querySelector('#assignedTo');
 
 
 
-
-let validFormFieldInput = ()=> {
+let validFormFieldInput = () => {
     //gets values from the form inputs
-   const taskNameValue = taskName.value.trim();
-   const taskDescriptionValue = taskDescription.value.trim();
+   const taskNameValue = taskName.value;
+   const taskDescriptionValue = taskDescription.value;
    const dueDateValue = dueDate.value;
    const taskPriorityValue = taskPriority.value;
    const assignedToValue = assignedTo.value;
-   
 
-   if(taskNameValue === '' || taskDescriptionValue === '' || dueDateValue === '' || taskPriorityValue === '' || assignedToValue === ''){
-       alert('Please complete form')
-   } else{
-      alert('Form has been submitted')
-   }
+    //checks if the inputs are empty
+   if(taskNameValue === '' || taskDescriptionValue === '' || dueDateValue === '' || taskPriorityValue === '' || assignedToValue === '') {
+    alert('please complete the form ')
+  
+
+} else {
+   alert('Form has been submitted')
 }
-
-form.addEventListener('submit', (e) => {
-    //e.preventDefault();
-   
+}
+  // what happens when you click submit button
+   submitBtn.addEventListener('click', (e) => {
     validFormFieldInput();
-   });
+     
+  });
+
+   
+
+ 
