@@ -8,23 +8,36 @@ const taskPriority = document.querySelector('#taskPriority');
 const assignedTo = document.querySelector('#assignedTo');
 
 
-form.addEventListener('submit', (e) => {
+myform.addEventListener('submit', (e) => {
  e.preventDefault();
+ const isValid = validFormFieldInput()
+ if (isValid) {
+   taskManager.addTask({
+    name: document.getElementById(
+        'taskName'
+    ),
+    description: document.getElementById(
+        'taskDescription'
+    ),
+    assignedTo: document.getElementById(
+        'assignedTo'
+
+    ),
+    dueDate: document.getElementById(
+        'dueDate'
+    ) ,
+     status: document.getElementById(
+        'statusBar'
+     ) ,
+  }
+
+   )
+
+   
+}
 
  validFormFieldInput();
 });
 
 let validFormFieldInput = ()=> {
-    //gets values from the form inputs
-   const taskNameValue = taskName.value.trim();
-   const taskDescriptionValue = taskDescription.value.trim();
-   const dueDateValue = dueDate.value;
-   const taskPrioityValue = taskPriority.value;
-   const assignedToValue = assignedTo.value;
-   
-   if(taskNameValue === ''){
-       //error message
-   } else{
-       // success message
-   }
-}
+   return true }
