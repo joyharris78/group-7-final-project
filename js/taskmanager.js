@@ -4,6 +4,19 @@ class TaskManager {
   constructor() {
     this.tasks = [];
   }
+
+  addTask(task) {
+    this.tasks.push(
+      new TodoTask(
+        Object.assign(
+          {
+            id: (this.tasks.length || 0) + 1,
+          },
+          task
+        )
+      )
+    )
+  }
 }
 //
 
@@ -51,9 +64,3 @@ const task5 = {
   dueDate: '2020-07-17',
   status: 'To-do'
 };
-
-addTask(task) {
-  this.tasks.push(new TodoTask(Object.assign({
-    id : (this.tasks.length || 0) + 1
-  }, task)))
-}
