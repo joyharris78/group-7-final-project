@@ -17,19 +17,6 @@ class TaskManager {
       )
     )
   }
-
-  addTask(task) {
-    this.tasks.push(
-      new TodoTask(
-        Object.assign(
-          {
-            id: (this.tasks.length || 0) + 1,
-          },
-          task
-        )
-      )
-    )
-  }
 }
 //
 
