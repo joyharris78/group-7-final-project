@@ -6,13 +6,13 @@ const createTaskHtml = (id,name, description, assignedTo, dueDate, status) =>`
     </div>
     <div class="card-body">
       <ul class="list-group-flush">
-        <li class="list-group-item">Task Name:${name} 
+        <li class="list-group-item"> Task Name: ${name} 
         </li>
-        <li class="list-group-item">Assigned To:${assignedTo} 
+        <li class="list-group-item">Assigned To: ${assignedTo} 
         </li>
-        <li class="list-group-item"> Description:${description}
+        <li class="list-group-item">Description: ${description}
         </li>
-        <li class="list-group-item"> Due Date:${dueDate}
+        <li class="list-group-item">Due Date: ${dueDate}
         </li>
       </ul>
       <span class="badge text-bg-primary ${status === 'TODO' ? 'badge-info' : 'badge-success'}">${status}
@@ -38,7 +38,7 @@ class TaskManager {
     id: this.currentId++,
     name: name,
     description: description,
-    assigned: 'assigned',
+    assignedTo: 'assigned', //changed it from assigned to assignedTo 
     dueDate: dueDate,
     status: 'In Process'
     }
