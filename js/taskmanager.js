@@ -1,18 +1,18 @@
 // task manager file
-const createTaskHtml = (id,name, description, assignedTo, dueDate, status) =>`
+const createTaskHtml = (id,name, description, assigned, dueDate) =>`
   <div class="card h-100 mb-3" style="max-width: 20rem;">
     <div class="card-header bg-primary text-white">
       <h5 class="card-title">Task ${id}</h5>
     </div>
     <div class="card-body">
       <ul class="list-group-flush">
-        <li class="list-group-item">Task Name:${name} 
+        <li class="list-group-item">Task Name: ${name} 
         </li>
-        <li class="list-group-item">Assigned To:${assignedTo} 
+        <li class="list-group-item">Assigned To: ${assigned} 
         </li>
-        <li class="list-group-item"> Description:${description}
+        <li class="list-group-item"> Description: ${description}
         </li>
-        <li class="list-group-item"> Due Date:${dueDate}
+        <li class="list-group-item"> Due Date: ${dueDate}
         </li>
       </ul>
       <span class="badge text-bg-primary ${status === 'TODO' ? 'badge-info' : 'badge-success'}">${status}
@@ -28,19 +28,19 @@ const createTaskHtml = (id,name, description, assignedTo, dueDate, status) =>`
 
 
 class TaskManager {
-  constructor(currentId = 0) {
+  constructor(currentId = 1) {
     this.tasks = [];
     this.currentId = currentId;
   }
 
-  addTask(name,description,assigned,dueDate,priority,status) {
+  addTask(name,description,assigned,dueDate) {
     const task = {
     id: this.currentId++,
     name: name,
     description: description,
-    assigned: 'assigned',
+    assigned: assigned,
     dueDate: dueDate,
-    status: 'In Process'
+  
     }
     this.tasks.push(task);
   }
@@ -56,7 +56,7 @@ class TaskManager {
     const formattedDate = date.toDateString();
 
     //Create html for tasks
-    const taskHtml = createTaskHtml(task.id, task.name, task.description, task.assignedTo, formattedDate, task.status);
+    const taskHtml = createTaskHtml(task.id, task.name, task.description, task.assigned, formattedDate);
 
     //add tasks to array
     tasksHtmlList.push(taskHtml);
