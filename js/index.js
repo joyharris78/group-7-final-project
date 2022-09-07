@@ -39,9 +39,16 @@ submitBtn.addEventListener("click", (event) => {
 
   }
 
- 
-
-
 });
 
+// Using query Selector for Task List
+const tasksList = document.querySelector('#tasksList');
 
+// adding event listener to task list 
+tasksList.addEventListener('click', (event) => {
+ // adding if statement 
+  if (event.target.classList.contains('done')) {
+    const taskParent = event.target.parentElement.parentElement.parentElement.parentElement.parentElement;
+  
+  }
+});
