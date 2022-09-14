@@ -4,6 +4,7 @@ const createTaskHtml = (id,name, description, assigned, dueDate) =>`
     <div class="card-header bg-primary text-white">
       <h5 class="card-title">Task ${id}</h5>
     </div>
+    <li class="list-group-item" data-task-id=${id}>
     <div class="card-body">
       <ul class="list-group-flush">
         <li class="list-group-item">Task Name: ${name} 
@@ -20,6 +21,9 @@ const createTaskHtml = (id,name, description, assigned, dueDate) =>`
     </div>
     <button type="submit" class="btn mr-2 done ${status === 'TODO' ? 'visible' :'invisible'}"> Mark As Done
     </button>
+  
+    <input class="btn btn-success" type="button" value="Mark as Done">
+
     <button type="button" class="btn btn-warning">Delete
     </button>
   </div>
@@ -69,7 +73,20 @@ class TaskManager {
     tasksList.innerHTML = tasksHtml;
 
    }
+   // added TaskById and variable found task
+   getTasksById(taskId) {
+    let foundTask;
+   //for loop for tasks 
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
 
+      if(task.id === taskId) {
+          foundTask = task;
+      }
+  }
+  return foundTask;
+     
+   }
    
 
 
