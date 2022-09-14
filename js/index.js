@@ -47,6 +47,15 @@ tasksList.addEventListener('click', (event) => {
  // adding if statement 
   if (event.target.classList.contains('done')) {
     const taskParent = event.target.parentElement.parentElement.parentElement.parentElement.parentElement;
-  
+  // added task id and status with render
+  const taskId = Number(taskParent.dataset.taskId);
+
+        const task = taskManager.getTasksById(taskId);
+
+        task.status = 'DONE';
+
+        taskManager.saveTask();
+
+        taskManager.render();
   }
 });
